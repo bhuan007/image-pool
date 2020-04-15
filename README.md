@@ -25,7 +25,7 @@ For Linux: https://opensource.com/article/17/6/set-path-linux
 
 After all three steps, your program is ready to run. On the terminal, execute the program by running "python imgurDownloader.py"
 
-The program will ask you for a search term. Go ahead and type whatever you please. A artificial window will pop open and will start searching and downloading the corresponding images. Let the program run, all the windows will close once the program is complete.
+The program will ask you for a search term. Go ahead and type whatever you please. An automated chrome window will pop open and will start searching and downloading the corresponding images. Do not close the window. Let the program run, all the windows will close once the program is complete.
 
 Once finished, you will have a new folder inside the program directory named 'imgur'. This is the location of your downloaded images.
 
