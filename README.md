@@ -21,9 +21,9 @@ For Mac OS: https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x
 
 For Linux: https://opensource.com/article/17/6/set-path-linux
 
-3) After cloning or downloading the repo, make sure to run "pip install -r requirements.txt" on the terminal inside the program directory. This will download the required dependencies.
+3) After cloning or downloading the repo, make sure to run "pip install -r requirements.txt" on the terminal inside the program directory. This will download the required dependencies. *NOTE do not place the main program folder inside a folder with high level of permissions such as Program Files. The script will not be able to create a folder to store the images.
 
-After all three steps, your program is ready to run. On the terminal, execute the program by running "python imgurDownloader.py"
+After all three steps, your program is ready to run. On the terminal, navigate to the program directory and execute the program by running "python imgurDownloader.py"
 
 The program will ask you for a search term. Go ahead and type whatever you please. An automated chrome window will pop open and will start searching and downloading the corresponding images. Do not close the window. Let the program run, the automated window will close by itself once the program is complete.
 
