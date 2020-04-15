@@ -3,12 +3,10 @@ Downloads jpeg images from imgur.
 
 PREQUISITES:
 
-1) 
-If you don't have python 3 installed, you can download it from here: https://www.python.org/downloads/
+1) If you don't have python 3 installed, you can download it from here: https://www.python.org/downloads/
 
 
-2) 
-This program will need Google Chrome's Browser AND Webdriver to work properly. 
+2) This program will need Google Chrome's Browser AND Webdriver to work properly. 
 Download Google Chrome Browser here: https://www.google.com/chrome/
 
 Please download your corresponding webdriver at https://sites.google.com/a/chromium.org/chromedriver/downloads. You can check which version your chrome is by clicking the three dots on the top right corner of the browser window -> help -> about google chrome.
@@ -21,8 +19,7 @@ For Mac OS check out this guide for adding new paths: https://www.architectryan.
 
 For Linux, check out this guide for adding new paths: https://opensource.com/article/17/6/set-path-linux
 
-3) 
-After cloning or downloading the repo, make sure to run "pip install -r requirements.txt" on the terminal inside the program directory. This will download the required dependencies.
+3) After cloning or downloading the repo, make sure to run "pip install -r requirements.txt" on the terminal inside the program directory. This will download the required dependencies.
 
 After all three steps, your program is ready to run. On the terminal, execute the program by running "python imgurDownloader.py"
 
