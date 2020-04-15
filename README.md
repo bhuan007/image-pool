@@ -3,7 +3,7 @@ Downloads up to 60 jpeg images from imgur depending on your search term.
 
 PREQUISITES:
 
-1) If you don't have python 3 installed, you can download it from here: https://www.python.org/downloads/
+1) If you don't have python 3 and pip installed, you can download it from here: https://www.python.org/downloads/
 
 
 2) This program will need the Google Chrome Browser AND Chrome Webdriver to work properly. 
