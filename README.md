@@ -1,5 +1,5 @@
 # imgur-downloader
-Downloads jpeg images from imgur.
+Downloads up to 60 jpeg images from imgur depending on your search term.
 
 PREQUISITES:
 
