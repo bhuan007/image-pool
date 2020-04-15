@@ -9,7 +9,7 @@ PREQUISITES:
 2) This program will need the Google Chrome Browser AND Chrome Webdriver to work properly. 
 Download Google Chrome Browser here: https://www.google.com/chrome/
 
-Please download your corresponding webdriver at https://sites.google.com/a/chromium.org/chromedriver/downloads. You can check which version your chrome is by clicking the three dots on the top right corner of the browser window -> help -> about google chrome.
+Please download your corresponding webdriver at https://sites.google.com/a/chromium.org/chromedriver/downloads. You can check which version your chrome is by clicking the three dots on the top right corner of the chrome browser window -> help -> about google chrome.
 
 After downloading the webdriver, you will need to place the webdriver onto a specified SYSTEM path. You can either place the webdriver into a new path folder or a existing path folder.
 
