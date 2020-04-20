@@ -1,5 +1,5 @@
 # imgur-downloader
-Downloads up to 60 jpeg images from imgur depending on your search term.
+Downloads images and logs image metadata to a csv from imgur depending on your search term.
 
 PREQUISITES:
 
@@ -28,4 +28,27 @@ After all three steps, your program is ready to run. On the terminal, navigate t
 The program will ask you for a search term. Go ahead and type whatever you please. An automated chrome window will pop open and will start searching and downloading the corresponding images. Do not close the window. Let the program run, the automated window will close by itself once the program is complete.
 
 Once finished, you will have a new folder inside the program directory named 'imgur'. This is the location of your downloaded images.
+
+CLASS USAGE:
+
+INSTANTIATE: 
+scraper = ImgurScraper(searchTerm, downloadNum)
+
+example:
+searchTerm = 'cats'
+downloadNum = 70
+scraper = ImgurScraper(searchTerm, downloadNum)
+
+METHODS:
+scraper.scrape()
+
+PROPERTIES:
+scraper.errorCount
+
+example:
+if (scraper.errorCount > 0):
+    print('Uh oh, there were problems with ' + str(scraper.errorCount) + ' images.')
+
+
+
 
