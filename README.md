@@ -1,6 +1,8 @@
 # imgur-downloader
 This program lets you download images and logs the image metadata to a csv from imgur.
 
+The metadata will log: picture id, post title, name of user who uploaded, date of upload, points (upvotes), number of views, and number of comments
+
 PREQUISITES:
 
 1) If you don't have python 3 and pip installed, you can download it from here: https://www.python.org/downloads/
