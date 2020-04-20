@@ -32,21 +32,29 @@ Once finished, you will have a new folder inside the program directory named 'im
 CLASS USAGE:
 
 INSTANTIATE: 
+
 scraper = ImgurScraper(searchTerm, downloadNum)
 
 example:
+
 searchTerm = 'cats'
+
 downloadNum = 70
+
 scraper = ImgurScraper(searchTerm, downloadNum)
 
 METHODS:
+
 scraper.scrape()
 
 PROPERTIES:
+
 scraper.errorCount
 
 example:
+
 if (scraper.errorCount > 0):
+
     print('Uh oh, there were problems with ' + str(scraper.errorCount) + ' images.')
 
 
