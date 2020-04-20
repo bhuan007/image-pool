@@ -29,7 +29,7 @@ After all three steps, your program is ready to run. On the terminal, navigate t
 
 The program will ask you for a search term. Go ahead and type whatever you please. An automated chrome window will pop open and will start searching and downloading the corresponding images. Do not close the window. Let the program run, the automated window will close by itself once the program is complete.
 
-Once finished, you will have a new folder inside the program directory named 'imgur'. This is the location of your downloaded images.
+Once finished, you will have a new folder inside the program directory named 'imgur'. This is the main location of your downloaded images. Inside that main folder, you will have subfolders for each search labeled by date and search term, which will have your images and csv file enclosed inside.
 
 CLASS USAGE:
 
