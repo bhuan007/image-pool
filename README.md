@@ -1,5 +1,5 @@
 # imgur-downloader
-Downloads images and logs image metadata to a csv from imgur depending on your search term.
+This program lets you download images and logs the image metadata to a csv from imgur.
 
 PREQUISITES:
 
