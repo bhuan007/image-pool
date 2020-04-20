@@ -17,6 +17,10 @@ class ImgurScraper():
 
 # The method scrape will initiate the webscraping application
 
+# You will notice version 1 and version 2 throughout the program. This is because imgur
+# for some reason, has two versions of html on its website that occurs during img searches
+# because of this, we need two versions to parse the html for the metadata
+
     def __init__(self, searchTerm, imgNum):
         self.searchTerm = searchTerm
         self.imgNum = imgNum
@@ -104,8 +108,6 @@ class ImgurScraper():
                 continue
 
         browser.quit()
-        # while True:
-        #     pass
         browser2.quit()
 
     def outputMeta(self, browser, version, id, subfolderName):
