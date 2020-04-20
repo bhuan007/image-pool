@@ -33,29 +33,29 @@ CLASS USAGE:
 
 INSTANTIATE: 
 
-scraper = ImgurScraper(searchTerm, downloadNum)
+    scraper = ImgurScraper(searchTerm, downloadNum)
 
 example:
 
-searchTerm = 'cats'
+    searchTerm = 'cats'
 
-downloadNum = 70
+    downloadNum = 70
 
-scraper = ImgurScraper(searchTerm, downloadNum)
+    scraper = ImgurScraper(searchTerm, downloadNum)
 
 METHODS:
 
-scraper.scrape()
+    scraper.scrape()
 
 PROPERTIES:
 
-scraper.errorCount
+    scraper.errorCount
 
 example:
 
-if (scraper.errorCount > 0):
+    if (scraper.errorCount > 0):
 
-    print('Uh oh, there were problems with ' + str(scraper.errorCount) + ' images.')
+        print('Uh oh, there were problems with ' + str(scraper.errorCount) + ' images.')
 
 
 
