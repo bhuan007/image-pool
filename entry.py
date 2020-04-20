@@ -13,4 +13,4 @@ scraper = ImgurScraper(sTerm, downloadNum)
 scraper.scrape()
 
 if (scraper.errorCount > 0):
-    print('There were ' + str(scraper.errorCount) + ' images that were not downloaded. This is probably because it was not a JPEG type image.')
+    print('Uh oh, there were problems with ' + str(scraper.errorCount) + ' images.')
