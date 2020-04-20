@@ -50,6 +50,7 @@ downloadNum sets the number of images to be downloaded.
 METHODS:
 
 The following will start the webscraping application
+    
     scraper.scrape()
 
 PROPERTIES:
