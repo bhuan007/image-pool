@@ -41,7 +41,7 @@ searchTerm is what the user wants to search.
 
 downloadNum sets the number of images to be downloaded.
 
-    searchTerm = 'cats'
+    searchTerm = 'cute dogs'
 
     downloadNum = 70
 
