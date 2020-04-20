@@ -37,6 +37,10 @@ INSTANTIATE:
 
 example:
 
+searchTerm is what the user wants to search.
+
+downloadNum sets the number of images to be downloaded.
+
     searchTerm = 'cats'
 
     downloadNum = 70
@@ -45,10 +49,12 @@ example:
 
 METHODS:
 
+The following will start the webscraping application
     scraper.scrape()
 
 PROPERTIES:
 
+This property returns an integer that represents how many errors occured during the downloading of images. Sometimes imgur returns gifs or videos during the search, and the program will not download those file types and include it in the errorCount.
     scraper.errorCount
 
 example:
