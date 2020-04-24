@@ -8,7 +8,20 @@ print('How many pictures would you want to download?')
 
 downloadNum = int(input())
 
-scraper = ImgurScraper(sTerm, downloadNum)
+while True:
+    print("Would you like to generate and collect metadata to a csv file? (Y/N)")
+    isOutputCSV = input().lower()
+
+    if (isOutputCSV == 'y'):
+        isOutputCSV = True
+        break
+    elif (isOutputCSV == 'n'):
+        isOutputCSV = False
+        break
+    else:
+        print('We did not understand your input try again.')
+
+scraper = ImgurScraper(sTerm, downloadNum, isOutputCSV)
 
 scraper.scrape()
 

@@ -21,9 +21,10 @@ class ImgurScraper():
 # for some reason, has two versions of html on its website that occurs during img searches
 # because of this, we need two versions to parse the html for the metadata
 
-    def __init__(self, searchTerm, imgNum):
+    def __init__(self, searchTerm, imgNum, isOutputCSV):
         self.searchTerm = searchTerm
         self.imgNum = imgNum
+        self.isOutputCSV = isOutputCSV
         # This parameter will tell you how many images were NOT downloaded / FAILED
         self.errorCount = 0
 
@@ -50,47 +51,33 @@ class ImgurScraper():
         #Adding image elements into an array
         imgArray = browser.find_elements_by_class_name('image-list-link')
 
-        with open(f'imgur/{subfolderName}/1-{self.searchTerm}-meta.csv', 'a', newline='') as file: 
+        if (self.isOutputCSV):
+            file = open(f'imgur/{subfolderName}/1-{self.searchTerm}-meta.csv', 'a', newline='')
             writer = csv.writer(file)
             writer.writerow(['id', 'title', 'author', 'date', 'points', 'views', 'comments'])
-            # Looping through image array and selecting each href to higher quality image
-            for x in imgArray[:self.imgNum]:
-                pictureAddress = x.get_attribute('href')
-                
-                try: 
-                    browser2.get(pictureAddress)
-                    # Waiting for the image to load first before moving on... timeout if load lasts longer than 3 seconds
+
+        # Looping through image array and selecting each href to higher quality image
+        for x in imgArray[:self.imgNum]:
+            pictureAddress = x.get_attribute('href')
+            
+            try: 
+                browser2.get(pictureAddress)
+                # Waiting for the image to load first before moving on... timeout if load lasts longer than 3 seconds
+                try:
+                    elementLoaded = EC.presence_of_element_located((By.CLASS_NAME, 'image-placeholder'))
+                    WebDriverWait(browser2, 3).until(elementLoaded)
+                    
+                except TimeoutException:
+                    # *****VERSION 2*****
                     try:
-                        elementLoaded = EC.presence_of_element_located((By.CLASS_NAME, 'image-placeholder'))
+                        elementLoaded = EC.presence_of_element_located((By.XPATH, "//div[@class='image post-image']//img"))
                         WebDriverWait(browser2, 3).until(elementLoaded)
-                        
                     except TimeoutException:
-                        # *****VERSION 2*****
-                        try:
-                            elementLoaded = EC.presence_of_element_located((By.XPATH, "//div[@class='image post-image']//img"))
-                            WebDriverWait(browser2, 3).until(elementLoaded)
-                        except TimeoutException:
-                            self.errorCount += 1
-                        else:
-                            # Finding the image and downloading it to imgur folder
-                            imgElement = browser2.find_element_by_xpath("//div[@class='image post-image']//img")
-                            imgLink = imgElement.get_attribute('src')
-                            res = requests.get(imgLink)
-                            imgId = str(os.path.basename(imgLink))
-                            imageFile = open(os.path.join(f'imgur/{subfolderName}', imgId), 'wb')
-
-                            for chunk in res.iter_content(100000):
-                                imageFile.write(chunk)
-                            imageFile.close()
-                            
-                            #Printing metadata
-                            self.outputMeta(browser2, 2, imgId, subfolderName, writer)
-
+                        self.errorCount += 1
                     else:
-                        # *****VERSION 1*****
                         # Finding the image and downloading it to imgur folder
-                        imgDiv = browser2.find_element_by_class_name('image-placeholder')
-                        imgLink = imgDiv.get_attribute('src')
+                        imgElement = browser2.find_element_by_xpath("//div[@class='image post-image']//img")
+                        imgLink = imgElement.get_attribute('src')
                         res = requests.get(imgLink)
                         imgId = str(os.path.basename(imgLink))
                         imageFile = open(os.path.join(f'imgur/{subfolderName}', imgId), 'wb')
@@ -100,10 +87,28 @@ class ImgurScraper():
                         imageFile.close()
                         
                         #Printing metadata
+                        if (self.isOutputCSV):
+                            self.outputMeta(browser2, 2, imgId, subfolderName, writer)
+
+                else:
+                    # *****VERSION 1*****
+                    # Finding the image and downloading it to imgur folder
+                    imgDiv = browser2.find_element_by_class_name('image-placeholder')
+                    imgLink = imgDiv.get_attribute('src')
+                    res = requests.get(imgLink)
+                    imgId = str(os.path.basename(imgLink))
+                    imageFile = open(os.path.join(f'imgur/{subfolderName}', imgId), 'wb')
+
+                    for chunk in res.iter_content(100000):
+                        imageFile.write(chunk)
+                    imageFile.close()
+                    
+                    #Printing metadata
+                    if (self.isOutputCSV):
                         self.outputMeta(browser2, 1, imgId, subfolderName, writer)
 
-                except:
-                    continue
+            except:
+                continue
 
         browser.quit()
         browser2.quit()
