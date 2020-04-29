@@ -21,7 +21,10 @@ def run_app():
     bot.scrape()
     
     alert['fg'] = 'green'
-    alert['text'] = f'New folder saved at {bot.fileLocation}'
+    if (bot.errorCount > 0):
+        alert['text'] = f'New folder saved at {bot.fileLocation}\nThere was a problem with {bot.errorCount} images.'
+    else:
+        alert['text'] = f'New folder saved at {bot.fileLocation}'
     
 
 window = tk.Tk()
@@ -45,7 +48,7 @@ header = tk.Label(frame_header, text = "Image Pool", bg='grey', fg='black', heig
 header.grid(row=0,column=0)
 
 #alert
-alert = tk.Label(alert_frame, text = '', fg='green', height='2', font=("Helvetica 8 "), wraplength=800, justify='center')
+alert = tk.Label(alert_frame, text = '', fg='green', height='2', font=("Helvetica 8 "), wraplength=1000, justify='center')
 alert.grid(row=1, column=0)
 
 
