@@ -10,13 +10,13 @@ def run_app():
     # Resetting text and boolean fields
     search_image_entry.delete(0, len(search_image_entry.get()))
     number_of_images_entry.delete(0, len(number_of_images_entry.get()))
-    csv_boolean.set('Yes')
 
     if csv_boolean.get() == 'Yes':
         setCsv = True
     else:
         setCsv = False
-    
+
+    csv_boolean.set('Yes')
     bot = ImgurScraper(user_search_image, user_number_of_images, setCsv)
     bot.scrape()
     
