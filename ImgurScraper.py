@@ -27,6 +27,7 @@ class ImgurScraper():
         self.isOutputCSV = isOutputCSV
         # This parameter will tell you how many images were NOT downloaded / FAILED
         self.errorCount = 0
+        self.fileLocation = ''
 
     def scrape(self):
         # Creating main imgur folder along with subfolder for a specific search
@@ -112,6 +113,7 @@ class ImgurScraper():
 
         browser.quit()
         browser2.quit()
+        self.fileLocation = os.path.dirname(os.path.abspath(__file__)) + f'\imgur\{subfolderName}'
 
     def outputMeta(self, browser, version, id, subfolderName, writer):
         if (version == 1):
