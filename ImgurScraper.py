@@ -113,7 +113,7 @@ class ImgurScraper():
 
         browser.quit()
         browser2.quit()
-        self.fileLocation = os.path.dirname(os.path.abspath(__file__)) + f'\imgur\{subfolderName}'
+        self.fileLocation = os.path.dirname(os.path.abspath('imgurApp.py')) + f'\imgur\{subfolderName}'
         if (self.isOutputCSV):
             file.close()
 
