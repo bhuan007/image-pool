@@ -11,11 +11,11 @@ INSTRUCTIONS:
 4. After downloading the webdriver, you will need to place the webdriver onto a specified SYSTEM path. You can either place the webdriver into a new path folder or an existing path folder.
 Please view the following guides if you need help.
 
-  For windows: https://www.itprotoday.com/cloud-computing/how-can-i-add-new-folder-my-system-path
+    For windows: https://www.itprotoday.com/cloud-computing/how-can-i-add-new-folder-my-system-path
 
-  For Mac OS: https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/
+    For Mac OS: https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/
 
-  For Linux: https://opensource.com/article/17/6/set-path-linux
+    For Linux: https://opensource.com/article/17/6/set-path-linux
 
 5. After cloning or downloading the repo, make sure to run `pip install -r requirements.txt` on the terminal inside the program directory. This will download the required dependencies. NOTE: Do not place the main program folder inside a folder with a high level of permissions such as Program Files. The script will not be able to create a folder to store the images. We recommend placing the main program folder in C:\Users\YourName
 
