@@ -9,7 +9,7 @@ INSTRUCTIONS:
 
 **3. Please download your corresponding webdriver at https://sites.google.com/a/chromium.org/chromedriver/downloads. You can check which version your chrome is by clicking the three dots on the top right corner of the chrome browser window -> help -> about google chrome.**
 
-4. After downloading the webdriver, you will need to place the webdriver application inside the main program folder.
+4. After downloading the webdriver, you will need to unzip and place the webdriver application inside the main program folder.
 
 5. After doing the above, your program is ready to run. Navigate to the program folder directory and execute the program by double clicking imagePool.exe
 
