@@ -6,32 +6,37 @@ def close_app():
 
 def run_app():
     user_search_image = str(search_image_entry.get())
-    user_number_of_images = int(number_of_images_entry.get())
+    try:
+        user_number_of_images = int(number_of_images_entry.get())
+    except:
+        alert['fg'] = 'red'
+        alert['text'] = 'Error: Please input a number'
+        number_of_images['fg'] = 'red'
     # Resetting text and boolean fields
-    search_image_entry.delete(0, len(search_image_entry.get()))
-    number_of_images_entry.delete(0, len(number_of_images_entry.get()))
-
-    if csv_boolean.get() == 'Yes':
-        setCsv = True
     else:
-        setCsv = False
+        number_of_images['fg'] = 'black'
+        search_image_entry.delete(0, len(search_image_entry.get()))
+        number_of_images_entry.delete(0, len(number_of_images_entry.get()))
 
-    csv_boolean.set('Yes')
-    bot = ImgurScraper(user_search_image, user_number_of_images, setCsv)
-    bot.scrape()
-    
-    alert['fg'] = 'green'
-    if (bot.errorCount > 0):
-        alert['text'] = f'New folder saved at {bot.fileLocation}\nThere was a problem with {bot.errorCount} images.'
-    else:
-        alert['text'] = f'New folder saved at {bot.fileLocation}'
+        if csv_boolean.get() == 'Yes':
+            setCsv = True
+        else:
+            setCsv = False
+
+        csv_boolean.set('Yes')
+        bot = ImgurScraper(user_search_image, user_number_of_images, setCsv)
+        bot.scrape()
+        
+        alert['fg'] = 'green'
+        if (bot.errorCount > 0):
+            alert['text'] = f'New folder saved at {bot.fileLocation}\nThere was a problem with {bot.errorCount} images.'
+        else:
+            alert['text'] = f'New folder saved at {bot.fileLocation}'
     
 
 window = tk.Tk()
 
 window.title("Image Pool")
-#window.geometry("400x300")
-#window.resizable("true", "true")
 
 #split window into three parts
 frame_header = tk.Frame(window, borderwidth=2, pady=2)
@@ -78,11 +83,11 @@ csv_option_dropdown = tk.OptionMenu(frame_main_3, csv_boolean, *csv_boolean_opti
 
 #start button
 button_run = tk.Button(bottom_frame, text="Start", command=run_app, bg='dark green', fg='white', relief='raised', width=10, font=('Helvetica 9 bold'))
-button_run.grid(column=0, row=0, sticky='w', padx=100, pady=2)
+button_run.grid(column=0, row=0, sticky='w', padx=100, pady=20)
 
 #exit button
 button_run = tk.Button(bottom_frame, text="Exit", command=close_app, bg='dark red', fg='white', relief='raised', width=10, font=('Helvetica 9 bold'))
-button_run.grid(column=1, row=0, sticky='e', padx=100, pady=2)
+button_run.grid(column=1, row=0, sticky='e', padx=100, pady=20)
 
 #organize and set widgets
 frame_main_1.pack(fill='x', pady=2)

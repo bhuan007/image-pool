@@ -114,6 +114,8 @@ class ImgurScraper():
         browser.quit()
         browser2.quit()
         self.fileLocation = os.path.dirname(os.path.abspath(__file__)) + f'\imgur\{subfolderName}'
+        if (self.isOutputCSV):
+            file.close()
 
     def outputMeta(self, browser, version, id, subfolderName, writer):
         if (version == 1):
