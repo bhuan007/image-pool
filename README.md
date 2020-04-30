@@ -5,9 +5,9 @@ INSTRUCTIONS:
 
 1. Download or clone the repo. NOTE: Do not place the main program folder inside a folder with a high level of permissions such as Program Files. The script will not be able to create a folder to store the images. We recommend placing the main program folder in C:\Users\YourName
 
-2. This program will need the Google Chrome Browser AND Chrome Webdriver to work properly. Download Google Chrome Browser here: https://www.google.com/chrome/
+**2. This program will need the Google Chrome Browser AND Chrome Webdriver to work properly. Download Google Chrome Browser here: https://www.google.com/chrome/
 
-3. Please download your corresponding webdriver at https://sites.google.com/a/chromium.org/chromedriver/downloads. You can check which version your chrome is by clicking the three dots on the top right corner of the chrome browser window -> help -> about google chrome.
+**3. Please download your corresponding webdriver at https://sites.google.com/a/chromium.org/chromedriver/downloads. You can check which version your chrome is by clicking the three dots on the top right corner of the chrome browser window -> help -> about google chrome.
 
 4. After downloading the webdriver, you will need to place the webdriver application inside the main program folder.
 
