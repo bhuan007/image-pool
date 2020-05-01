@@ -3,7 +3,7 @@ The metadata will log: picture id, post title, name of user who uploaded, date o
 
 INSTRUCTIONS:
 
-1. Download or clone the repo. NOTE: Do not place the main program folder inside a folder with a high level of permissions such as Program Files. The script will not be able to create a folder to store the images. We recommend placing the main program folder in C:\Users\YourName. Also make sure that your firewall does not delete the program. You could also technically delete all files except for imagePool.exe, I just included the code for anyone intersted in seeing how the program works.
+1. Download or clone the repo. NOTE: Do not place the main program folder inside a folder with a high level of permissions such as Program Files. The script will not be able to create a folder to store the images. We recommend placing the main program folder in C:\Users\YourName. Also make sure that your firewall does not delete the program. **You could also technically delete all files except for imagePool.exe**, I just included the code for anyone intersted in seeing how the program works.
 
 **2. This program will need the Google Chrome Browser AND Chrome Webdriver to work properly. Download Google Chrome Browser here: https://www.google.com/chrome/**
 
