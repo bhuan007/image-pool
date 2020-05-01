@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 from selenium import webdriver
 import requests, os, time, math, csv, datetime, re
 
@@ -110,6 +109,7 @@ class ImgurScraper():
 
             except:
                 continue
+
 
         browser.quit()
         browser2.quit()
