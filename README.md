@@ -1,3 +1,5 @@
+Checkout a video of this program in action: https://drive.google.com/file/d/1bmVq0bZxGQVXhb36eapVyfN8PrxGQISh/view?usp=sharing
+
 This program lets you download images and logs the image metadata to a csv from imgur.
 The metadata will log: picture id, post title, name of user who uploaded, date of upload, points (upvotes), number of views, and number of comments
 
